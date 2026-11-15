@@ -5,9 +5,15 @@ import { AboutPage } from './pages/AboutPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ContactFooter } from './components/ContactFooter';
 
+const normalizePath = (rawPath: string): string => {
+  let clean = rawPath.replace(/\/index\.html$/, '').replace(/\/+$/, '');
+  if (!clean || clean === '') clean = '/';
+  return clean;
+};
+
 export const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>(() => {
-    return window.location.pathname || '/';
+    return normalizePath(window.location.pathname || '/');
   });
   const [targetHash, setTargetHash] = useState<string>(() => {
     return window.location.hash.replace('#', '');
@@ -16,7 +22,7 @@ export const App: React.FC = () => {
   // Handle browser back / forward navigation
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      setCurrentPath(normalizePath(window.location.pathname || '/'));
       setTargetHash(window.location.hash.replace('#', ''));
     };
 
@@ -25,9 +31,10 @@ export const App: React.FC = () => {
   }, []);
 
   const navigateTo = (path: string, hash?: string) => {
+    const norm = normalizePath(path);
     const url = hash ? `${path}#${hash}` : path;
     history.pushState(null, '', url);
-    setCurrentPath(path);
+    setCurrentPath(norm);
     setTargetHash(hash || '');
 
     if (!hash) {
@@ -61,4 +68,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-
