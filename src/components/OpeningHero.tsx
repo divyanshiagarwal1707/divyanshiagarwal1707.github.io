@@ -273,20 +273,20 @@ export const OpeningHero: React.FC<OpeningHeroProps> = ({ onComplete }) => {
           transition: phase === 'completed' ? 'transform 0.1s ease-out, opacity 0.1s ease-out' : 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
-        <div className="relative w-[280px] sm:w-[360px] md:w-[460px] aspect-[4/5] flex items-end justify-center">
+        <div className="relative w-[300px] sm:w-[400px] md:w-[480px] aspect-square flex items-end justify-center">
           {/* Portrait Image with High-contrast B&W, grain halo, and deep shadows fading to background */}
           <img
             src={PERSONAL_INFO.portraitPath}
             alt="Divyanshi Agarwal"
-            className="w-full h-full object-cover object-top filter grayscale contrast-125 brightness-95"
+            className="w-full h-full object-contain object-bottom filter grayscale contrast-120 brightness-100"
             style={{
-              // Mask bottom and sides smoothly into #08080C background so shoulders merge into darkness
-              maskImage: 'radial-gradient(ellipse 80% 70% at 50% 40%, black 50%, transparent 95%), linear-gradient(to bottom, black 65%, transparent 98%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 40%, black 50%, transparent 95%), linear-gradient(to bottom, black 65%, transparent 98%)'
+              // Smoothly fade bottom into #08080C background so lower torso merges into darkness behind PORTFOLIO
+              maskImage: 'linear-gradient(to bottom, black 72%, transparent 98%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 72%, transparent 98%)'
             }}
           />
           {/* Fine grain overlay over portrait */}
-          <div className="absolute inset-0 grain-overlay opacity-30 mix-blend-overlay pointer-events-none" />
+          <div className="absolute inset-0 grain-overlay opacity-25 mix-blend-overlay pointer-events-none" />
         </div>
       </div>
 

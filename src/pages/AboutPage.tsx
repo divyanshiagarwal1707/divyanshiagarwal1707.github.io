@@ -19,13 +19,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pb-16 border-b border-[#292930]/60">
           {/* Portrait with high contrast B&W */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-[#292930] bg-[#111116] shadow-2xl max-w-md mx-auto lg:mx-0">
+            <div className="relative rounded-2xl overflow-hidden border border-[#292930] bg-gradient-to-b from-[#181824] to-[#111116] shadow-2xl max-w-md mx-auto lg:mx-0">
               <img
                 src={PERSONAL_INFO.portraitPath}
                 alt="Divyanshi Agarwal"
-                className="w-full h-auto object-cover filter grayscale contrast-125 brightness-95"
+                className="w-full h-auto aspect-square object-contain filter grayscale contrast-120 brightness-100 p-2"
               />
-              <div className="absolute inset-0 grain-overlay opacity-30 mix-blend-overlay pointer-events-none" />
+              <div className="absolute inset-0 grain-overlay opacity-25 mix-blend-overlay pointer-events-none" />
               
               <div className="p-4 bg-[#111116] border-t border-[#292930] flex items-center justify-between text-xs font-mono">
                 <span className="text-white font-bold">{PERSONAL_INFO.name}</span>

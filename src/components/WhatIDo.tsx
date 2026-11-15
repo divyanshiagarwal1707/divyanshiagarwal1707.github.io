@@ -49,11 +49,10 @@ export const WhatIDo: React.FC = () => {
 
                 {/* Right: Small diagonal coral arrow */}
                 <div className="flex items-center gap-3">
-                  <ArrowUpRight 
-                    size={22} 
-                    className={`text-[#E05263] group-hover:text-[#08080C] group-focus:text-[#08080C] transition-transform duration-200 ${
-                      isExpanded ? 'rotate-90' : 'group-hover:translate-x-1 group-hover:-translate-y-1'
-                    }`} 
+                  <ArrowUpRight
+                    size={22}
+                    className={`text-[#E05263] group-hover:text-[#08080C] group-focus:text-[#08080C] transition-transform duration-200 ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-1 group-hover:-translate-y-1'
+                      }`}
                   />
                 </div>
               </button>

@@ -70,7 +70,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/divyanshiagarwal2505",
   linkedin: "https://www.linkedin.com/in/divyanshiagarwal1707",
   resumePath: "/Divyanshi_Agarwal_Resume.pdf",
-  portraitPath: "/divyanshi-portrait.jpg",
+  portraitPath: "/divyanshi-portrait.png",
   currentYear: 2026,
   statusLine: "BCA STUDENT · JECRC UNIVERSITY",
   introParagraph: "Adaptable BCA student, with a foundation in programming, website development, business-oriented project workflows and Salesforce fundamentals. Experienced in organising information around user needs, contributing to team activities and supporting event coordination. Brings problem-solving, critical-thinking, communication and teamwork skills, with a willingness to learn and contribute across technical, operations, customer-facing and administrative roles."
