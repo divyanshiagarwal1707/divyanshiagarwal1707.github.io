@@ -61,7 +61,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 BIOGRAPHY & ENGINEERING ETHOS
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-black tracking-tight text-steel-gradient">
-                Building Software Around Real Human Steps
+                Aspiring Salesforce Developer and Data Analyst
               </h1>
             </div>
 
