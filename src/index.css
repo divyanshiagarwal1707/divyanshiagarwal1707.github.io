@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #08080C;
+  color: #F5F5F7;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle steel-blue vertical gradient for huge titles */
+.text-steel-gradient {
+  background: linear-gradient(180deg, #FFFFFF 55%, #A8B8C8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Coral to Amber gradient for SOMETHING */
+.text-coral-amber {
+  background: linear-gradient(135deg, #FF6B4A 0%, #FFA05E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08080C;
+}
+::-webkit-scrollbar-thumb {
+  background: #23232C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #32323E;
+}
+
+/* Film grain overlay */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #FF5E3A;
+  outline-offset: 3px;
+}
