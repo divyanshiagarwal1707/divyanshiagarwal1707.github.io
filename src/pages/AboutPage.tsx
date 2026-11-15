@@ -23,7 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <img
                 src={PERSONAL_INFO.portraitPath}
                 alt="Divyanshi Agarwal"
-                className="w-full h-auto aspect-square object-contain filter grayscale contrast-120 brightness-100 p-2"
+                className="w-full h-auto aspect-square object-contain filter brightness-100 contrast-105 drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] p-2 transition-transform duration-300 hover:scale-[1.03]"
               />
               <div className="absolute inset-0 grain-overlay opacity-25 mix-blend-overlay pointer-events-none" />
               
