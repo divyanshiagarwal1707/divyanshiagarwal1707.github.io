@@ -104,6 +104,18 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ targetHash }) => {
 
                   {/* External links */}
                   <div className="flex flex-wrap items-center gap-3">
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF5E3A] text-white hover:bg-[#FF7352] text-xs font-heading font-bold transition-all shadow-md group/demo"
+                      >
+                        <ExternalLink size={13} />
+                        <span>Live demo</span>
+                        <ArrowUpRight size={13} className="group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
                     {project.hasPublicRepo && project.sourceUrl && (
                       <a
                         href={project.sourceUrl}

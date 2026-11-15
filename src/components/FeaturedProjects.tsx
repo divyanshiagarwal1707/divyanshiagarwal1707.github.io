@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Github, Terminal, Sparkles, Scale, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Github, ExternalLink, Terminal, Sparkles, Scale, ShieldCheck } from 'lucide-react';
 import { PROJECTS, Project } from '../data/portfolioData';
 
 interface FeaturedProjectsProps {
@@ -79,7 +79,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onNavigateTo
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href={`/projects#${project.id}`}
                     onClick={(e) => {
@@ -91,6 +91,19 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onNavigateTo
                     <span>Read case study</span>
                     <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </a>
+
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-heading font-bold bg-[#FF5E3A] text-white hover:bg-[#FF7352] transition-all shadow-md group/demo"
+                    >
+                      <ExternalLink size={14} />
+                      <span>Live demo</span>
+                      <ArrowUpRight size={13} className="group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
 
                   {project.hasPublicRepo && project.sourceUrl && (
                     <a
@@ -139,7 +152,15 @@ function renderProjectPreview(projectId: string) {
             <span className="w-2.5 h-2.5 rounded-full bg-[#E54B64]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
-            <span className="ml-2 text-[#71717A]">luxeloom.store/product/gold-solitaire</span>
+            <a 
+              href="https://luxeloom-kcij.onrender.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="ml-2 text-[#A1A1AA] hover:text-[#FF5E3A] transition-colors flex items-center gap-1"
+            >
+              <span>luxeloom-kcij.onrender.com</span>
+              <ExternalLink size={10} />
+            </a>
           </div>
           <span className="text-[#FF5E3A] font-semibold text-[10px] uppercase tracking-wider bg-[#FF5E3A]/10 px-2 py-0.5 rounded border border-[#FF5E3A]/20">
             Live Metal Calculation Demo

@@ -140,6 +140,7 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Razorpay Test API"],
     caseStudyUrl: "/projects#luxeloom",
     sourceUrl: "https://github.com/divyanshiagarwal2505/LuxeLoom-E-Commerce-Jewellery-Website",
+    demoUrl: "https://luxeloom-kcij.onrender.com/",
     hasPublicRepo: true,
     caseStudy: {
       userAndProblem: "Jewellery buyers often struggle with static pricing because precious metal values (gold, silver, platinum) fluctuate daily. In standard e-commerce carts, customers have little transparency into how making charges, metal purity, and weight compose the final invoice, leading to cart abandonment and trust issues.",
