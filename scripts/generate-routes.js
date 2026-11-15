@@ -51,3 +51,4 @@ console.log('✓ Generated dist/404.html');
 // 4. Generate .nojekyll to disable Jekyll processing on GitHub Pages
 fs.writeFileSync(path.join(distDir, '.nojekyll'), '');
 console.log('✓ Generated dist/.nojekyll');
+
