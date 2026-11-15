@@ -81,21 +81,31 @@ export const ArcadeGame: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [gameState, setGameState] = useState<'idle' | 'playing' | 'gameover' | 'victory'>('idle');
+  const gameStateRef = useRef<'idle' | 'playing' | 'gameover' | 'victory'>('idle');
   const [balls, setBalls] = useState(3);
   const [score, setScore] = useState(0);
   const [bricksLeft, setBricksLeft] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
 
-  // Sound synthesis using Web Audio API
+  // Sync ref and silence audio when not actively playing
   const audioCtxRef = useRef<AudioContext | null>(null);
+
+  useEffect(() => {
+    gameStateRef.current = gameState;
+    if (gameState !== 'playing' && audioCtxRef.current && audioCtxRef.current.state === 'running') {
+      audioCtxRef.current.suspend().catch(() => {});
+    }
+  }, [gameState]);
+
+  // Sound synthesis using Web Audio API — ONLY plays when user clicks play
   const playBeep = useCallback((freq = 440, type: OscillatorType = 'sine', duration = 0.08) => {
-    if (!soundEnabled) return;
+    if (!soundEnabled || gameStateRef.current !== 'playing') return;
     try {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       if (!AudioCtx) return;
       if (!audioCtxRef.current) audioCtxRef.current = new AudioCtx();
       const ctx = audioCtxRef.current;
-      if (ctx.state === 'suspended') ctx.resume();
+      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
 
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
@@ -201,7 +211,11 @@ export const ArcadeGame: React.FC = () => {
     setBalls(3);
     setScore(0);
     setBricksLeft(bricks.length);
+    gameStateRef.current = mode;
     setGameState(mode);
+    if (mode === 'playing' && audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
+      audioCtxRef.current.resume().catch(() => {});
+    }
   }, [buildBricks]);
 
   // Setup canvas & resize
@@ -357,11 +371,16 @@ export const ArcadeGame: React.FC = () => {
           } else if (gameState === 'playing') {
             setBalls((prev) => {
               const next = prev - 1;
-              playBeep(180, 'sawtooth', 0.2);
               if (next <= 0) {
+                // Game over: stop sound completely
+                gameStateRef.current = 'gameover';
                 setGameState('gameover');
+                if (audioCtxRef.current && audioCtxRef.current.state === 'running') {
+                  audioCtxRef.current.suspend().catch(() => {});
+                }
                 return 0;
               } else {
+                playBeep(180, 'sawtooth', 0.15);
                 // Reset ball
                 g.ballX = g.paddleX + g.paddleW / 2;
                 g.ballY = h - 60;
