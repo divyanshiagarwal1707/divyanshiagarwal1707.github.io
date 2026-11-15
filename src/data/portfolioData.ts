@@ -97,28 +97,28 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const CAPABILITIES: CapabilityItem[] = [
   {
-    id: "web-apps",
+    id: "salesforce",
     number: "01",
+    title: "SALESFORCE FUNDAMENTALS",
+    explanation: "I’m learning Salesforce through workshops and practice, with an interest in how business requirements become workflows."
+  },
+  {
+    id: "data-analysis",
+    number: "02",
+    title: "DATA ANALYSIS FOUNDATIONS",
+    explanation: "I’m developing my SQL and Excel skills so I can organise data, ask clearer questions, and interpret results."
+  },
+  {
+    id: "web-apps",
+    number: "03",
     title: "WEB APPLICATIONS",
     explanation: "I design shopping and booking journeys around the decisions a visitor needs to make next."
   },
   {
     id: "backend-db",
-    number: "02",
+    number: "04",
     title: "BACKEND AND DATABASE PROJECTS",
     explanation: "I’ve used Python and SQLite to model accounts, transactions, and persistent records in a banking simulation."
-  },
-  {
-    id: "data-analysis",
-    number: "03",
-    title: "DATA ANALYSIS FOUNDATIONS",
-    explanation: "I’m developing my SQL and Excel skills so I can organise data, ask clearer questions, and interpret results."
-  },
-  {
-    id: "salesforce",
-    number: "04",
-    title: "SALESFORCE FUNDAMENTALS",
-    explanation: "I’m learning Salesforce through workshops and practice, with an interest in how business requirements become workflows."
   },
   {
     id: "teamwork",

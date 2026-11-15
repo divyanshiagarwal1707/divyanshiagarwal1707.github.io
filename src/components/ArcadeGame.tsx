@@ -120,8 +120,8 @@ export const ArcadeGame: React.FC = () => {
     paddleH: 10,
     ballX: 345,
     ballY: 350,
-    ballVx: 3.5,
-    ballVy: -4.5,
+    ballVx: 2.0,
+    ballVy: -2.8,
     ballR: 6,
     bricks: [] as Brick[],
     isFocused: false,
@@ -194,8 +194,8 @@ export const ArcadeGame: React.FC = () => {
     gameRef.current.paddleX = (w - gameRef.current.paddleW) / 2;
     gameRef.current.ballX = w / 2;
     gameRef.current.ballY = h - 50;
-    gameRef.current.ballVx = (Math.random() > 0.5 ? 1 : -1) * (w < 500 ? 3 : 4);
-    gameRef.current.ballVy = -(w < 500 ? 3.5 : 4.5);
+    gameRef.current.ballVx = (Math.random() > 0.5 ? 1 : -1) * (w < 500 ? 1.8 : 2.2);
+    gameRef.current.ballVy = -(w < 500 ? 2.2 : 2.8);
     gameRef.current.bricks = bricks;
 
     setBalls(3);
@@ -311,10 +311,10 @@ export const ArcadeGame: React.FC = () => {
           const hitOffset = (g.ballX - (g.paddleX + g.paddleW / 2)) / (g.paddleW / 2);
           const maxAngle = Math.PI / 3; // 60 degrees
           const angle = hitOffset * maxAngle;
-          const speed = Math.sqrt(g.ballVx * g.ballVx + g.ballVy * g.ballVy);
+          const baseSpeed = w < 500 ? 2.5 : 3.2;
 
-          g.ballVx = speed * Math.sin(angle);
-          g.ballVy = -Math.abs(speed * Math.cos(angle));
+          g.ballVx = baseSpeed * Math.sin(angle);
+          g.ballVy = -Math.abs(baseSpeed * Math.cos(angle));
           playBeep(480, 'triangle', 0.08);
         }
 
@@ -353,7 +353,7 @@ export const ArcadeGame: React.FC = () => {
             // Respawn for idle preview
             g.ballX = w / 2;
             g.ballY = h - 80;
-            g.ballVy = -4;
+            g.ballVy = -2.6;
           } else if (gameState === 'playing') {
             setBalls((prev) => {
               const next = prev - 1;
@@ -365,8 +365,8 @@ export const ArcadeGame: React.FC = () => {
                 // Reset ball
                 g.ballX = g.paddleX + g.paddleW / 2;
                 g.ballY = h - 60;
-                g.ballVx = 3.5;
-                g.ballVy = -4.5;
+                g.ballVx = (Math.random() > 0.5 ? 1 : -1) * (w < 500 ? 1.8 : 2.2);
+                g.ballVy = -(w < 500 ? 2.2 : 2.8);
                 return next;
               }
             });

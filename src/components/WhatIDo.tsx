@@ -3,7 +3,7 @@ import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { CAPABILITIES } from '../data/portfolioData';
 
 export const WhatIDo: React.FC = () => {
-  const [expandedId, setExpandedId] = useState<string | null>("web-apps");
+  const [expandedId, setExpandedId] = useState<string | null>("salesforce");
 
   const toggleRow = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
