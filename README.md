@@ -70,3 +70,4 @@ npm run preview
 - `src/pages/AboutPage.tsx`: Full background and credentials page.
 - `src/pages/ProjectsPage.tsx`: Deep-dive architectural case studies.
 - `public/`: Divyanshi's portrait and PDF résumé.
+

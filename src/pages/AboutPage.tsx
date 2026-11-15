@@ -66,7 +66,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
 
             <p className="text-base sm:text-lg text-[#F5F5F7] leading-relaxed font-sans font-normal">
-              I’m Divyanshi Agarwal, a BCA undergraduate at JECRC University in Jaipur, specialising in Artificial Intelligence and Machine Learning. I combine foundational programming discipline in C, C++, and Python with practical web engineering in React, Node.js, and SQLite.
+              {PERSONAL_INFO.introParagraph}
             </p>
 
             {/* Concrete Examples from Each Project */}
@@ -220,3 +220,4 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

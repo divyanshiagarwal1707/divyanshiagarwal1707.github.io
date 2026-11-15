@@ -387,3 +387,4 @@ export const OpeningHero: React.FC<OpeningHeroProps> = ({ onComplete }) => {
     </section>
   );
 };
+

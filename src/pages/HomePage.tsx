@@ -57,3 +57,4 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, targetHash }) =>
     </main>
   );
 };
+

@@ -114,7 +114,7 @@ export const ContactFooter: React.FC = () => {
                 FOCUS
               </span>
               <p className="text-sm sm:text-base font-sans text-[#F5F5F7]">
-                Software development · Data analysis · Salesforce
+                Salesforce development · Data analysis · Software development
               </p>
             </div>
 
@@ -168,3 +168,4 @@ export const ContactFooter: React.FC = () => {
     </footer>
   );
 };
+

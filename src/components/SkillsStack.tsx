@@ -42,3 +42,4 @@ export const SkillsStack: React.FC = () => {
     </section>
   );
 };
+

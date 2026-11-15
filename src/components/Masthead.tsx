@@ -177,3 +177,4 @@ export const Masthead: React.FC<MastheadProps> = ({ currentPath, onNavigate }) =
     </header>
   );
 };
+

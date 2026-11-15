@@ -64,7 +64,7 @@ export const PERSONAL_INFO = {
   roleTitle: "BCA Undergraduate",
   specialisation: "Artificial Intelligence and Machine Learning",
   university: "JECRC University",
-  headline: "Aspiring software developer, data analyst, and Salesforce developer",
+  headline: "Aspiring Salesforce developer, data analyst, and software developer",
   email: "divyanshiagarwal434@gmail.com",
   emailAction: "mailto:divyanshiagarwal434@gmail.com",
   github: "https://github.com/divyanshiagarwal2505",
@@ -73,7 +73,7 @@ export const PERSONAL_INFO = {
   portraitPath: "/divyanshi-portrait.jpg",
   currentYear: 2026,
   statusLine: "BCA STUDENT · JECRC UNIVERSITY",
-  introParagraph: "I’m Divyanshi Agarwal, a BCA student at JECRC University specialising in Artificial Intelligence and Machine Learning. I like building software around the steps people actually take, from choosing a piece of jewellery to booking a legal consultation. I’m also exploring how data analysis and Salesforce can help me understand and improve those workflows."
+  introParagraph: "Adaptable BCA student, with a foundation in programming, website development, business-oriented project workflows and Salesforce fundamentals. Experienced in organising information around user needs, contributing to team activities and supporting event coordination. Brings problem-solving, critical-thinking, communication and teamwork skills, with a willingness to learn and contribute across technical, operations, customer-facing and administrative roles."
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
@@ -293,3 +293,4 @@ export const EDUCATION_RECORDS: EducationItem[] = [
     details: "High academic distinction and active participation in school curricular events."
   }
 ];
+

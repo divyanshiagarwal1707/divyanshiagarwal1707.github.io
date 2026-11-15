@@ -256,3 +256,4 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ targetHash }) => {
     </div>
   );
 };
+

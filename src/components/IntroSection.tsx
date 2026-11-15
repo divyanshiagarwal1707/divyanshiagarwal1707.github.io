@@ -54,3 +54,4 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onNavigateToAbout })
     </section>
   );
 };
+
